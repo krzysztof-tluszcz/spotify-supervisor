@@ -7,7 +7,7 @@ from serverside.router import Router
 
 def main():
     bot = Bot()
-    bot_app = bot.start(settings.temp_token)
+    bot_app = bot.start(settings.BOT_TOKEN)
     bot_task = asyncio.ensure_future(bot_app)
 
     server = Sanic("Spotify Supervisor")

@@ -10,7 +10,7 @@ class Guide(botside.commands.base_command.BaseCommand):
 
     async def handle(self, params, message, client):
 
-        url='https://accounts.spotify.com/pl/authorize?scope=playlist-modify-private,playlist-modify-public&response_type=code&redirect_uri=http://0.0.0.0:8080&client_id='+settings.temp_client_id
+        url='https://accounts.spotify.com/pl/authorize?scope=playlist-modify-private,playlist-modify-public&response_type=code&redirect_uri=http://0.0.0.0:8080&client_id='+settings.SPOTIFY_CLIENT_ID
 
         await message.author.send(
         "**Hi!** :hand_splayed:"+
@@ -21,6 +21,6 @@ class Guide(botside.commands.base_command.BaseCommand):
         "\n`--------`"+
         "\n**1.** *Click the link below and authorize yourself.*"+
         "\n"+url+
-        "\n**2.** *After hitting the big green button, copy the* **__URL__** *you have been redirected to and use it as shown in an example.*\t:arrow_right:\t;authorize **__URL__**"+
+        "\n**2.** *After hitting the big green button, copy the* **__URL__** *you have been redirected to and use it as shown in an example.*\t:arrow_right:\t;authorize **SPOTIFY_USERNAME URL**"+
         "\n`--------`"+
         "\n"+message.author.mention)
